@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Геометрия: простейшие фигуры</title>
+    <style>
+        :root {
+            --primary: #2c3e50;
+            --secondary: #3498db;
+            --accent: #e74c3c;
+            --light: #ecf0f1;
+            --dark: #2c3e50;
+            --font-main: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            font-family: var(--font-main);
+            line-height: 1.6;
+            color: var(--dark);
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f9f9f9;
+        }
+        
+        header {
+            text-align: center;
+            margin-bottom: 30px;
+            border-bottom: 2px solid var(--secondary);
+            padding-bottom: 10px;
+        }
+        
+        h1 {
+            color: var(--primary);
+            margin-bottom: 5px;
+        }
+        
+        h2 {
+            color: var(--secondary);
+            margin-top: 30px;
+            border-left: 4px solid var(--secondary);
+            padding-left: 10px;
+        }
+        
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 20px auto;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            border-radius: 4px;
+        }
+        
+        .figure-caption {
+            text-align: center;
+            font-style: italic;
+            color: #666;
+            margin-top: -15px;
+            margin-bottom: 25px;
+        }
+        
+        .theorem {
+            background-color: var(--light);
+            padding: 15px;
+            border-radius: 5px;
+            margin: 20px 0;
+            border-left: 4px solid var(--accent);
+        }
+        
+        .formula {
+            font-family: 'Courier New', monospace;
+            background-color: #f0f0f0;
+            padding: 8px 15px;
+            border-radius: 4px;
+            display: inline-block;
+            margin: 10px 0;
+            font-size: 1.1em;
+        }
+        
+        .important {
+            color: var(--accent);
+            font-weight: bold;
+        }
+        
+        .task {
+            background-color: #e8f4fc;
+            padding: 15px;
+            border-radius: 5px;
+            margin: 20px 0;
+        }
+        
+        .task-title {
+            font-weight: bold;
+            color: var(--primary);
+        }
+        
+        @media (max-width: 768px) {
+            body {
+                padding: 15px;
+            }
+            
+            h1 {
+                font-size: 1.8em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Навигационное меню -->
+    <nav class="navbar">
+        <div class="navbar-container">
+            <a href="index.html" class="logo">Геометрия ОГЭ</a>
+            <ul class="nav-links">
+                <li><a href="index.html" class="active">Главная</a></li>
+                <li><a href="theory.html">Теория</a></li>
+                <li><a href="tasks.html">Задания</a></li>
+            </ul>
+        </div>
+    </nav>
+    <header>
+        <h1>Простейшие фигуры в геометрии</h1>
+        <p>Основные понятия и свойства точек, прямых и углов</p>
+    </header>
+
+    <section>
+        <p>Геометрия - наука о фигурах и их взаимодействии друг с другом. Как весь мир состоит из мельчайших частиц, так и в геометрии все фигуры из чего-то состоят. Самыми простыми элементами в геометрии являются <strong>прямые</strong> и <strong>точки</strong>.</p>
+        
+        <img src="image1.png" alt="Точки на прямой">
+        <p class="figure-caption">Рисунок 1 - красная точка принадлежит прямой, а синяя - нет.</p>
+        
+        <img src="image2.png" alt="Пересекающиеся прямые">
+        <p class="figure-caption">Рисунок 2 - красные прямые пересекаются с черной прямой, но не пересекаются друг с другом.</p>
+    </section>
+
+    <section>
+        <h2>Углы и их свойства</h2>
+        
+        <p>Угол - это геометрическая фигура, которая ограничена двумя <em>лучами</em> (луч - это геометрическая фигура, представляющая собой линию, которая имеет начало, но не имеет конца). Углы измеряются <em>градусами</em>. Углы бывают:</p>
+        <ul>
+            <li>острыми (&lt;90°) (синий)</li>
+            <li>тупыми (&gt;90°) (красный)</li>
+            <li>прямыми (=90°) (оранжевый)</li>
+        </ul>
+        
+        <img src="image3.png" alt="Виды углов">
+        <p class="figure-caption">Рисунок 3 - разновидности углов</p>
+        
+        <img src="image4.png" alt="Развернутый угол">
+        <p class="figure-caption">Рисунок 4 - развернутый угол (180 градусов)</p>
+    </section>
+
+    <section>
+        <h2>Смежные и вертикальные углы</h2>
+        
+        <img src="image5.png" alt="Смежные углы">
+        <p class="figure-caption">Рисунок 5 - смежные углы.</p>
+        
+        <div class="theorem">
+            <p><strong>Свойство смежных углов:</strong> Смежные углы - это такие, которые лежат на одной прямой, а второй они отделяются. <span class="important">Смежные углы всегда в сумме дают 180 градусов</span>, потому что вместе они образуют <em>развернутый</em> угол.</p>
+        </div>
+        
+        <img src="image6.png" alt="Вертикальные углы">
+        <p class="figure-caption">Рисунок 6 - вертикальные углы</p>
+        
+        <div class="theorem">
+            <p><strong>Свойство вертикальных углов:</strong> Вертикальные углы образуются при пересечении двух прямых. <span class="important">Они равны между собой</span> (синие углы равны синим, оранжевые - оранжевым).</p>
+        </div>
+    </section>
+
+    <section>
+        <h2>Биссектриса угла</h2>
+        
+        <div class="theorem">
+            <p><strong>Определение:</strong> Биссектриса - это линия, которая разделяет угол на два равных.</p>
+        </div>
+        
+        <img src="image7.png" alt="Биссектриса угла">
+        <p class="figure-caption">Рисунок 7 - биссектриса угла</p>
+    </section>
+
+    <section>
+        <h2>Параллельные прямые</h2>
+        
+        <p>Параллельные прямые никогда не пересекаются и имеют определенные свойства. На рисунке 8 мы можем видеть две черные параллельные прямые <em>a</em> и <em>b</em> и красную секущую <em>l</em>. Образуются 8 углов.</p>
+        
+        <div class="theorem">
+            <p><strong>Свойства параллельных прямых:</strong></p>
+            <ul>
+                <li>Соответственные углы равны</li>
+                <li>Накрест лежащие углы равны</li>
+                <li>Сумма односторонних углов равна 180°</li>
+            </ul>
+        </div>
+        
+        <img src="image7.1.png" alt="Параллельные прямые">
+        <p class="figure-caption">Рисунок 8 - параллельные прямые с секущей</p>
+    </section>
+
+    <section>
+        <h2>Примеры задач</h2>
+        
+        <div class="task">
+            <p class="task-title">Задача 1: Найти красный угол</p>
+            <img src="image8.png" alt="Задача 1">
+            <p>Красный и зеленый углы являются смежными, а значит в сумме дают 180 градусов. Чтобы найти один из них, необходимо из общей суммы, то есть из 180 вычесть другой, известный, угол:</p>
+            <div class="formula">180° − 54° = 126°</div>
+        </div>
+        
+        <div class="task">
+            <p class="task-title">Задача 2: Найти зеленый угол</p>
+            <img src="image9.png" alt="Задача 2">
+            <p>Данные углы в сумме дают 180 градусов. Чтобы найти один из них, необходимо из общей суммы, то есть из 180 вычесть другой, известный, угол:</p>
+            <div class="formula">180° − 152° = 28°</div>
+        </div>
+        
+        <div class="task">
+            <p class="task-title">Задача 3: Сумма углов в треугольнике</p>
+            <img src="image10.png" alt="Доказательство суммы углов">
+            <p>Проведем две черные параллельные прямые. Красную и синюю секущую проведем так, чтобы они пересекали одну черную прямую в одной общей точке. Розовый, оранжевый и зеленый углы (сверху на рисунке) в сумме дают 180 градусов, так как составляют вместе развернутый угол.</p>
+            <p>В треугольнике, который образовался двумя секущими и одной черной прямой, появляются такие же розовый и зеленый углы по свойству параллельности. Тогда в нем такие же три угла, что и те, которые были ранее, а значит также дают в сумме 180 градусов.</p>
+            <div class="formula">α + β + γ = 180°</div>
+        </div>
+        
+        <div class="task">
+            <p class="task-title">Задача 4: Угол между биссектрисами</p>
+            <img src="image11.png" alt="Задача с биссектрисами">
+            <p>В треугольнике АВС проведены биссектрисы АЕ и СD, которые пересекаются в точке О. Угол В равен 48 градусов. Найдите угол АОС.</p>
+            <p>Решение:</p>
+            <div class="formula">2x + 2y + 48° = 180° → 2x + 2y = 132°</div>
+            <div class="formula">x + y = 66°</div>
+            <p>Рассмотрим треугольник АОС:</p>
+            <div class="formula">x + y + ∠AOC = 180° → 66° + ∠AOC = 180° → ∠AOC = 180° − 66° = 114°</div>
+            <p class="important">Угол между двумя биссектрисами треугольника равен 90° + α/2, где α - угол, из которого биссектриса не проводилась.</p>
+        </div>
+    </section>
+</body>
+</html>

@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Геометрия: Окружности</title>
+    <style>
+        :root {
+            --primary: #2c3e50;
+            --secondary: #3498db;
+            --accent: #e74c3c;
+            --light: #ecf0f1;
+            --dark: #2c3e50;
+            --font-main: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            font-family: var(--font-main);
+            line-height: 1.6;
+            color: var(--dark);
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f9f9f9;
+        }
+        
+        header {
+            text-align: center;
+            margin-bottom: 30px;
+            border-bottom: 2px solid var(--secondary);
+            padding-bottom: 10px;
+        }
+        
+        h1 {
+            color: var(--primary);
+            margin-bottom: 5px;
+        }
+        
+        h2 {
+            color: var(--secondary);
+            margin-top: 30px;
+            border-left: 4px solid var(--secondary);
+            padding-left: 10px;
+        }
+        
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 20px auto;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            border-radius: 4px;
+        }
+        
+        .figure-caption {
+            text-align: center;
+            font-style: italic;
+            color: #666;
+            margin-top: -15px;
+            margin-bottom: 25px;
+        }
+        
+        .theorem {
+            background-color: var(--light);
+            padding: 15px;
+            border-radius: 5px;
+            margin: 20px 0;
+            border-left: 4px solid var(--accent);
+        }
+        
+        .formula {
+            font-family: 'Courier New', monospace;
+            background-color: #f0f0f0;
+            padding: 8px 15px;
+            border-radius: 4px;
+            display: inline-block;
+            margin: 10px 0;
+            font-size: 1.1em;
+        }
+        
+        .important {
+            color: var(--accent);
+            font-weight: bold;
+        }
+        
+        .task {
+            background-color: #e8f4fc;
+            padding: 15px;
+            border-radius: 5px;
+            margin: 20px 0;
+        }
+        
+        .task-title {
+            font-weight: bold;
+            color: var(--primary);
+        }
+        
+        .solution-step {
+            margin: 15px 0;
+            padding: 10px;
+            background-color: #f8f9fa;
+            border-left: 3px solid var(--secondary);
+        }
+        
+        .definition {
+            background-color: #e8f5e9;
+            padding: 15px;
+            border-radius: 5px;
+            margin: 20px 0;
+            border-left: 4px solid #4caf50;
+        }
+        
+        @media (max-width: 768px) {
+            body {
+                padding: 15px;
+            }
+            
+            h1 {
+                font-size: 1.8em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Окружности в геометрии</h1>
+        <p>Основные элементы, свойства и теоремы</p>
+    </header>
+
+    <section>
+        <div class="definition">
+            <p><strong>Окружность</strong> - это множество точек, равноудаленных от фиксированной точки (центра).</p>
+            <p><strong>Круг</strong> - часть плоскости, ограниченная окружностью.</p>
+        </div>
+        
+        <img src="imagecir1.png" alt="Элементы окружности">
+        <p class="figure-caption">Рисунок 1 - элементы окружности</p>
+        
+        <div class="theorem">
+            <h3>Основные элементы</h3>
+            <ul>
+                <li><strong>Радиус</strong> - отрезок от центра до точки окружности</li>
+                <li><strong>Хорда</strong> - отрезок, соединяющий две точки окружности</li>
+                <li><strong>Диаметр</strong> - хорда, проходящая через центр: <span class="formula">D = 2R</span></li>
+                <li><strong>Дуга</strong> - часть окружности (полная окружность - 360°)</li>
+            </ul>
+        </div>
+    </section>
+
+    <section>
+        <h2>Длина и площадь</h2>
+        
+        <img src="imagecir2.png" alt="Длина окружности и площадь круга">
+        <p class="figure-caption">Рисунок 2 - длина окружности и площадь круга</p>
+        
+        <div class="theorem">
+            <p><strong>Длина окружности:</strong></p>
+            <div class="formula">C = 2πR</div>
+        </div>
+        
+        <div class="theorem">
+            <p><strong>Площадь круга:</strong></p>
+            <div class="formula">S = πR²</div>
+        </div>
+    </section>
+
+    <section>
+        <h2>Углы в окружности</h2>
+        
+        <img src="imagecir3.png" alt="Центральный и вписанный углы">
+        <p class="figure-caption">Рисунок 3 - центральный (синий) и вписанный (красный) углы</p>
+        
+        <div class="theorem">
+            <p><strong>Центральный угол</strong> равен градусной мере дуги, на которую он опирается.</p>
+            <p><strong>Вписанный угол</strong> равен половине дуги, на которую он опирается.</p>
+        </div>
+        
+        <img src="imagecir4.png" alt="Вписанные углы">
+        <p class="figure-caption">Рисунок 4 - вписанные углы, опирающиеся на общую дугу</p>
+    </section>
+
+    <section>
+        <h2>Касательные и секущие</h2>
+        
+        <img src="imagecir5.png" alt="Касательные к окружности">
+        <p class="figure-caption">Рисунок 5 - свойства касательных</p>
+        
+        <div class="theorem">
+            <p><strong>Свойства касательных:</strong></p>
+            <ul>
+                <li>Касательная перпендикулярна радиусу в точке касания</li>
+                <li>Касательные из одной точки равны</li>
+                <li>Угол между касательными: <span class="formula">α = 180° - ∠AOB</span></li>
+            </ul>
+        </div>
+        
+        <div class="task">
+            <p class="task-title">Задача: Найти угол между касательной и хордой, если хорда стягивает дугу 64°</p>
+            <img src="imagecir6.png" alt="Иллюстрация к задаче">
+            <p class="figure-caption">Рисунок 6 - условие задачи</p>
+            
+            <div class="solution-step">
+                <p>1. Проведем радиусы OA и OB:</p>
+                <p>Центральный угол AOB = 64° (равен дуге).</p>
+            </div>
+            <div class="solution-step">
+                <p>2. Треугольник AOB - равнобедренный (OA = OB - радиусы):</p>
+                <div class="formula">∠OAB = ∠OBA = (180° - 64°)/2 = 58°</div>
+            </div>
+            <div class="solution-step">
+                <p>3. Угол между касательной и радиусом 90°:</p>
+                <div class="formula">∠BAD = 90° - ∠OAB = 90° - 58° = 32°</div>
+            </div>
+            <img src="imagecir7.png" alt="Решение задачи">
+            <p class="figure-caption">Рисунок 7 - решение задачи</p>
+            <p><strong>Ответ:</strong> Угол равен <span class="formula">32°</span>.</p>
+        </div>
+        
+        <h3>Свойства секущих</h3>
+        <img src="imagecir8.png" alt="Секущие окружности">
+        <p class="figure-caption">Рисунок 8 - свойства секущих</p>
+        <div class="formula">AB × AC = AD × AE</div>
+        
+        <h3>Касательная и секущая</h3>
+        <img src="imagecir9.png" alt="Касательная и секущая">
+        <p class="figure-caption">Рисунок 9 - свойство касательной и секущей</p>
+        <div class="formula">AB² = AC × AD</div>
+    </section>
+
+    <section>
+        <h2>Окружность и треугольник</h2>
+        
+        <h3>Вписанная окружность</h3>
+        <img src="imagecir10.png" alt="Вписанная окружность">
+        <p class="figure-caption">Рисунок 10 - окружность, вписанная в треугольник</p>
+        <p>Центр - точка пересечения биссектрис.</p>
+        
+        <div class="theorem">
+            <p><strong>Для прямоугольного треугольника:</strong></p>
+            <div class="formula">r = (k₁ + k₂ - h)/2</div>
+            <p>где <em>k₁, k₂</em> - катеты, <em>h</em> - гипотенуза</p>
+        </div>
+        <img src="imagecir11.png" alt="Вписанная окружность в прямоугольный треугольник">
+        <p class="figure-caption">Рисунок 11 - доказательство формулы</p>
+        
+        <h3>Описанная окружность</h3>
+        <img src="imagecir12.png" alt="Описанная окружность">
+        <p class="figure-caption">Рисунок 12 - окружность, описанная около треугольника</p>
+        <p>Центр - точка пересечения серединных перпендикуляров.</p>
+        <div class="formula">a/sin(α) = 2R</div>
+    </section>
+</body>
+</html>

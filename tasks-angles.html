@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Задачи по геометрии: Углы</title>
+    <link rel="stylesheet" href="styles/styles.css">
+</head>
+<body>
+    <!-- Меню (как на других страницах) -->
+    <nav class="navbar">
+        <div class="navbar-container">
+            <a href="index.html" class="logo">Геометрия ОГЭ</a>
+            <ul class="nav-links">
+                <li><a href="index.html">Главная</a></li>
+                <li><a href="theory.html">Теория</a></li>
+                <li><a href="tasks.html" class="active">Задания</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Контент страницы -->
+    <div class="container">
+        <h1>Задачи по теме: Углы</h1>
+        
+        <!-- Задача 1 -->
+        <div class="task-card" id="task1">
+            <div class="task-header">
+                <h2>Задача 1</h2>
+                <div class="task-number">1</div>
+            </div>
+            <img src="media/image1.png" alt="Задача 1" class="task-image">
+            <div class="task-content">
+                <p class="task-text">Углы, отмеченные на рисунке одной дугой, равны. Найдите угол α. Ответ дайте в градусах.</p>
+            </div>
+            
+            <div class="task-controls">
+                <input type="number" class="answer-input" placeholder="Ответ">
+                <button class="check-btn" onclick="checkAnswer(1, 40)">Проверить</button>
+                <button class="hint-btn" onclick="getAIHelp(1)">Подсказка от ИИ</button>
+            </div>
+            <!-- Блок для подсказки ИИ -->
+            <div class="ai-helper" id="hint1"></div>
+        </div>
+
+        <!-- Остальные задачи (2-7) добавляются аналогично -->
+    </div>
+
+    <!-- Подключение скриптов -->
+    <script src="scripts/openrouter.js"></script>
+    <script>
+        async function showHelp(taskId) {
+            const taskText = document.querySelector(`#task${taskId} p`).textContent;
+            const helperDiv = document.getElementById(`hint${taskId}`);
+            helperDiv.innerHTML = '<div class="loading">ИИ анализирует задачу... ⏳</div>';
+            
+            try {
+                const response = await getAIHelp(taskText);
+                helperDiv.innerHTML = `<div class="ai-response">${response}</div>`;
+            } catch (error) {
+                helperDiv.innerHTML = '<div class="error">Ошибка: ' + error.message + '</div>';
+            }
+        }
+
+        // Проверка ответов (локальная функция)
+        function checkAnswer(taskId, correctAnswer) {
+            const userAnswer = parseInt(document.querySelector(`#task${taskId} .answer-input`).value);
+            const resultElement = document.createElement('div');
+            
+            if (userAnswer === correctAnswer) {
+                resultElement.textContent = `✅ Верно! Ответ: ${correctAnswer}°`;
+                resultElement.style.color = 'green';
+            } else {
+                resultElement.textContent = '❌ Неверно. Попробуйте ещё раз или запросите подсказку.';
+                resultElement.style.color = 'red';
+            }
+            
+            document.querySelector(`#task${taskId} .task-controls`).appendChild(resultElement);
+        }
+    </script>
+<script>
+!function(){
+    const b=document.createElement("script");
+    b.src="https://functions.iiagent.pro/api/v1.0/get_dialog_ai_widget_api?record_id=recbbeK16uIKxW5KS&promt_id=27243&lang=ru&fullscreen=0&voice=1&file=1&avatar=1&wait_msg=Думаю";
+    b.setAttribute("allow","autoplay");
+    document.head.appendChild(b);
+}();</script>
+</body>
+</html>

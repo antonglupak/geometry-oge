@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Геометрия: Трапеции</title>
+    <style>
+        :root {
+            --primary: #2c3e50;
+            --secondary: #3498db;
+            --accent: #e74c3c;
+            --light: #ecf0f1;
+            --dark: #2c3e50;
+            --font-main: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            font-family: var(--font-main);
+            line-height: 1.6;
+            color: var(--dark);
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f9f9f9;
+        }
+        
+        header {
+            text-align: center;
+            margin-bottom: 30px;
+            border-bottom: 2px solid var(--secondary);
+            padding-bottom: 10px;
+        }
+        
+        h1 {
+            color: var(--primary);
+            margin-bottom: 5px;
+        }
+        
+        h2 {
+            color: var(--secondary);
+            margin-top: 30px;
+            border-left: 4px solid var(--secondary);
+            padding-left: 10px;
+        }
+        
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 20px auto;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            border-radius: 4px;
+        }
+        
+        .figure-caption {
+            text-align: center;
+            font-style: italic;
+            color: #666;
+            margin-top: -15px;
+            margin-bottom: 25px;
+        }
+        
+        .theorem {
+            background-color: var(--light);
+            padding: 15px;
+            border-radius: 5px;
+            margin: 20px 0;
+            border-left: 4px solid var(--accent);
+        }
+        
+        .formula {
+            font-family: 'Courier New', monospace;
+            background-color: #f0f0f0;
+            padding: 8px 15px;
+            border-radius: 4px;
+            display: inline-block;
+            margin: 10px 0;
+            font-size: 1.1em;
+        }
+        
+        .important {
+            color: var(--accent);
+            font-weight: bold;
+        }
+        
+        .task {
+            background-color: #e8f4fc;
+            padding: 15px;
+            border-radius: 5px;
+            margin: 20px 0;
+        }
+        
+        .task-title {
+            font-weight: bold;
+            color: var(--primary);
+        }
+        
+        .trapezoid-types {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin: 20px 0;
+        }
+        
+        .trapezoid-card {
+            flex: 1;
+            min-width: 250px;
+            background: white;
+            padding: 15px;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        
+        .solution-step {
+            margin: 15px 0;
+            padding: 10px;
+            background-color: #f8f9fa;
+            border-left: 3px solid var(--secondary);
+        }
+        
+        @media (max-width: 768px) {
+            body {
+                padding: 15px;
+            }
+            
+            h1 {
+                font-size: 1.8em;
+            }
+            
+            .trapezoid-types {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Трапеции в геометрии</h1>
+        <p>Свойства, виды и методы решения задач</p>
+    </header>
+
+    <section>
+        <h2>Виды трапеций</h2>
+        
+        <div class="trapezoid-types">
+            <div class="trapezoid-card">
+                <h3>Произвольная трапеция (синий)</h3>
+                <ul>
+                    <li>Одно основание параллельно другому</li>
+                    <li>Боковые стороны не равны</li>
+                    <li>Углы при основаниях разные</li>
+                </ul>
+            </div>
+            
+            <div class="trapezoid-card">
+                <h3>Равнобедренная трапеция (красный)</h3>
+                <ul>
+                    <li>Боковые стороны равны</li>
+                    <li>Углы при каждом основании равны</li>
+                    <li>Диагонали равны</li>
+                </ul>
+            </div>
+            
+            <div class="trapezoid-card">
+                <h3>Прямоугольная трапеция (зеленый)</h3>
+                <ul>
+                    <li>Два угла по 90°</li>
+                    <li>Одна боковая сторона перпендикулярна основаниям</li>
+                </ul>
+            </div>
+        </div>
+        
+        <img src="imagetra1.png" alt="Виды трапеций">
+        <p class="figure-caption">Рисунок 1 - разновидности трапеций</p>
+    </section>
+
+    <section>
+        <h2>Основные свойства и формулы</h2>
+        
+        <div class="theorem">
+            <h3>Площадь трапеции</h3>
+            <img src="imagetra2.png" alt="Площадь трапеции">
+            <p class="figure-caption">Рисунок 2 - площадь трапеции через высоту</p>
+            <div class="formula">S = (a + b)/2 × h</div>
+            <p>где <em>a</em> и <em>b</em> - основания, <em>h</em> - высота</p>
+        </div>
+        
+        <div class="theorem">
+            <h3>Средняя линия</h3>
+            <img src="imagetra3.png" alt="Средняя линия трапеции">
+            <p class="figure-caption">Рисунок 3 - средняя линия трапеции</p>
+            <p>Средняя линия параллельна основаниям и равна их полусумме:</p>
+            <div class="formula">FE = (a + b)/2</div>
+            <p>Площадь можно выразить через среднюю линию:</p>
+            <div class="formula">S = FE × h</div>
+        </div>
+    </section>
+
+    <section>
+        <h2>Примеры задач с подробным решением</h2>
+        
+        <div class="task">
+            <p class="task-title">Пример 1. Средняя линия трапеции равна 14, большее основание равно 42. Чему равно меньшее основание?</p>
+            <div class="solution-step">
+                <p>1. Запишем формулу средней линии:</p>
+                <div class="formula">FE = (a + b)/2</div>
+            </div>
+            <div class="solution-step">
+                <p>2. Подставим известные значения:</p>
+                <div class="formula">14 = (42 + x)/2</div>
+            </div>
+            <div class="solution-step">
+                <p>3. Решим уравнение:</p>
+                <div class="formula">42 + x = 28 → x = -14</div>
+            </div>
+            <div class="solution-step">
+                <p>4. Анализ результата:</p>
+                <p class="important">Длина основания не может быть отрицательной! Такой трапеции не существует.</p>
+            </div>
+        </div>
+        
+        <div class="task">
+            <p class="task-title">Пример 2. Диагональ BD трапеции ABCD перпендикулярна AB (AB=21, BD=20). Найти большее основание.</p>
+            <img src="imagetra4.png" alt="Решение примера 2">
+            <p class="figure-caption">Рисунок 4 - решение задачи 2</p>
+            <div class="solution-step">
+                <p>1. Треугольник ABD - прямоугольный (по условию).</p>
+            </div>
+            <div class="solution-step">
+                <p>2. По теореме Пифагора найдем AD:</p>
+                <div class="formula">AD = √(AB² + BD²) = √(21² + 20²) = √(441 + 400) = √841 = 29</div>
+            </div>
+            <p><strong>Ответ:</strong> Большее основание равно <span class="formula">29</span>.</p>
+        </div>
+        
+        <div class="task">
+            <p class="task-title">Пример 3. В равнобедренной трапеции меньшее основание и боковая сторона равны 6, угол при основании 45°. Найти большее основание и площадь.</p>
+            <img src="imagetra5.png" alt="Решение примера 3">
+            <p class="figure-caption">Рисунок 5 - решение задачи 3</p>
+            <div class="solution-step">
+                <p>1. Проведем две высоты BF и CH:</p>
+                <p>Образовались два равных прямоугольных треугольника ABF и DCH.</p>
+            </div>
+            <div class="solution-step">
+                <p>2. В треугольнике ABF:</p>
+                <div class="formula">∠A = 45°, ∠F = 90° → ∠B = 45° → треугольник равнобедренный → AF = BF</div>
+            </div>
+            <div class="solution-step">
+                <p>3. По теореме Пифагора:</p>
+                <div class="formula">AF² + BF² = AB² → 2AF² = 36 → AF = 3√2</div>
+            </div>
+            <div class="solution-step">
+                <p>4. Большее основание:</p>
+                <div class="formula">AD = AF + FH + HD = 3√2 + 6 + 3√2 = 6 + 6√2</div>
+            </div>
+            <div class="solution-step">
+                <p>5. Площадь трапеции:</p>
+                <div class="formula">S = (6 + (6 + 6√2))/2 × 3√2 = (12 + 6√2)/2 × 3√2 = (6 + 3√2) × 3√2 = 18√2 + 18</div>
+            </div>
+            <p><strong>Ответ:</strong> Большее основание <span class="formula">6 + 6√2</span>, площадь <span class="formula">18(√2 + 1)</span>.</p>
+        </div>
+        
+        <div class="task">
+            <p class="task-title">Пример 4. В трапеции ABCD угол A=64°, биссектриса угла A пересекает BC в точке C, угол ACD=52°. Найти углы ADC и ABC.</p>
+            <img src="imagetra6.png" alt="Решение примера 4">
+            <p class="figure-caption">Рисунок 6 - решение задачи 4</p>
+            <div class="solution-step">
+                <p>1. Биссектриса делит угол A пополам:</p>
+                <div class="formula">∠BAC = ∠CAD = 64°/2 = 32°</div>
+            </div>
+            <div class="solution-step">
+                <p>2. В треугольнике ACD:</p>
+                <div class="formula">∠ADC = 180° - ∠CAD - ∠ACD = 180° - 32° - 52° = 96°</div>
+            </div>
+            <div class="solution-step">
+                <p>3. Углы при боковых сторонах трапеции в сумме дают 180°:</p>
+                <div class="formula">∠ABC = 180° - ∠BAD = 180° - 64° = 116°</div>
+            </div>
+            <p><strong>Ответ:</strong> ∠ADC = <span class="formula">96°</span>, ∠ABC = <span class="formula">116°</span>.</p>
+        </div>
+        
+        <div class="task">
+            <p class="task-title">Пример 5*. Диагонали трапеции 6 и 8, средняя линия 5. Найти площадь.</p>
+            <img src="imagetra7.png" alt="Решение примера 5">
+            <p class="figure-caption">Рисунок 7 - решение задачи 5</p>
+            <div class="solution-step">
+                <p>1. Перенесем диагональ BD параллельно в точку C, получим отрезок CK=6.</p>
+            </div>
+            <div class="solution-step">
+                <p>2. Четырехугольник BCKD - параллелограмм (по построению), поэтому DK=BC.</p>
+            </div>
+            <div class="solution-step">
+                <p>3. Средняя линия:</p>
+                <div class="formula">EF = (AD + BC)/2 = 5 → AD + BC = 10</div>
+            </div>
+            <div class="solution-step">
+                <p>4. Отрезок AK = AD + DK = AD + BC = 10.</p>
+            </div>
+            <div class="solution-step">
+                <p>5. Треугольник ACK со сторонами 6, 8, 10 - прямоугольный (6² + 8² = 10²).</p>
+            </div>
+            <div class="solution-step">
+                <p>6. Значит, диагонали трапеции перпендикулярны.</p>
+            </div>
+            <div class="solution-step">
+                <p>7. Площадь трапеции через диагонали:</p>
+                <div class="formula">S = (d₁ × d₂)/2 × sin(90°) = (6 × 8)/2 = 24</div>
+            </div>
+            <p><strong>Ответ:</strong> Площадь трапеции равна <span class="formula">24</span>.</p>
+        </div>
+    </section>
+</body>
+</html>

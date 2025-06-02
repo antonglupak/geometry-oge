@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Задачи по геометрии: Углы</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .task-container {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 30px;
+            margin: 30px 0;
+        }
+        
+        .task-card {
+            background: white;
+            border-radius: 8px;
+            padding: 25px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+            position: relative;
+        }
+        
+        .task-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        
+        .task-number {
+            background: var(--secondary);
+            color: white;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+        }
+        
+        .task-image {
+            max-width: 200px;
+            margin: 15px auto;
+            display: block;
+        }
+        
+        .answer-input {
+            padding: 10px;
+            border: 2px solid #ddd;
+            border-radius: 5px;
+            width: 100px;
+            margin-right: 10px;
+        }
+        
+        .check-btn, .hint-btn {
+            padding: 10px 15px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: all 0.3s;
+        }
+        
+        .check-btn {
+            background-color: var(--secondary);
+            color: white;
+        }
+        
+        .check-btn:hover {
+            background-color: var(--primary);
+        }
+        
+        .hint-btn {
+            background-color: #f0f0f0;
+            margin-left: 10px;
+        }
+        
+        .hint-btn:hover {
+            background-color: #e0e0e0;
+        }
+        
+        .ai-helper {
+            background-color: #e8f4fc;
+            padding: 15px;
+            border-radius: 8px;
+            margin-top: 20px;
+            display: none;
+        }
+        
+        .ai-response {
+            margin-top: 10px;
+            padding: 10px;
+            background: white;
+            border-radius: 5px;
+        }
+        
+        .ai-typing {
+            display: inline-block;
+            width: 10px;
+            height: 10px;
+            background: var(--secondary);
+            border-radius: 50%;
+            opacity: 0;
+            animation: typing 1s infinite;
+        }
+        
+        @keyframes typing {
+            0% { opacity: 0; }
+            50% { opacity: 1; }
+            100% { opacity: 0; }
+        }
+        
+        .ai-typing:nth-child(2) {
+            animation-delay: 0.2s;
+        }
+        
+        .ai-typing:nth-child(3) {
+            animation-delay: 0.4s;
+        }
+        
+        .correct-answer {
+            color: #4CAF50;
+            font-weight: bold;
+            margin-top: 10px;
+        }
+        
+        .wrong-answer {
+            color: #F44336;
+            font-weight: bold;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Навигационное меню -->
+    <nav class="navbar">
+        <div class="navbar-container">
+            <a href="index.html" class="logo">Геометрия ОГЭ</a>
+            <ul class="nav-links">
+                <li><a href="index.html">Главная</a></li>
+                <li><a href="theory.html">Теория</a></li>
+                <li><a href="tasks.html" class="active">Задания</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    
+    <!-- Основной контент -->
+    <div class="container">
+        <h1>Задачи по теме: Углы</h1>
+    <p><iframe allow="microphone;autoplay" style="width:100%;height:100%!important;" src="https://functions.iiagent.pro/api/v1.0/chatgpt_widget_dialog_api?record_id=recbbeK16uIKxW5KS&promt_id=27243&lang=ru&fullscreen=0&voice=1&file=1"></iframe>
+</p>
+
+        <p>Решите задачи, используя знания о свойствах углов. При необходимости воспользуйтесь подсказками.</p>
+        
+        <div class="task-container">
+            <!-- Задача 1 -->
+            <div class="task-card" id="task1">
+                <div class="task-header">
+                    <h2>Задача 1</h2>
+                    <div class="task-number">1</div>
+                </div>
+                <img src="media/image1.png" alt="Задача 1" class="task-image">
+                <p>Углы, отмеченные на рисунке одной дугой, равны. Найдите угол α. Ответ дайте в градусах.</p>
+                
+                <div class="task-controls">
+                    <input type="number" class="answer-input" placeholder="Ответ">
+                    <button class="check-btn" onclick="checkAnswer(1, 40)">Проверить</button>
+                    <button class="hint-btn" onclick="showHint(1)">Подсказка</button>
+                </div>
+                
+                <div class="ai-helper" id="hint1">
+                    <h4>Помощник:</h4>
+                    <div class="ai-response" id="ai-response1">
+                        <span class="ai-typing"></span>
+                        <span class="ai-typing"></span>
+                        <span class="ai-typing"></span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Задача 2 -->
+            <div class="task-card" id="task2">
+                <div class="task-header">
+                    <h2>Задача 2</h2>
+                    <div class="task-number">2</div>
+                </div>
+                <img src="media/image2.png" alt="Задача 2" class="task-image">
+                <p>Углы, отмеченные на рисунке одной дугой, равны. Найдите угол α. Ответ дайте в градусах.</p>
+                
+                <div class="task-controls">
+                    <input type="number" class="answer-input" placeholder="Ответ">
+                    <button class="check-btn" onclick="checkAnswer(2, 40)">Проверить</button>
+                    <button class="hint-btn" onclick="showHint(2)">Подсказка</button>
+                </div>
+                
+                <div class="ai-helper" id="hint2">
+                    <h4>Помощник:</h4>
+                    <div class="ai-response" id="ai-response2">
+                        <span class="ai-typing"></span>
+                        <span class="ai-typing"></span>
+                        <span class="ai-typing"></span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Остальные задачи (3-7) -->
+            <!-- Шаблон аналогичный, с соответствующими изображениями и правильными ответами -->
+            
+        </div>
+        
+        <div class="content-section">
+            <h2>Нужна помощь?</h2>
+            <p>Если у вас возникли трудности с решением задач, вы можете:</p>
+            <ul>
+                <li>Воспользоваться подсказками к каждой задаче</li>
+                <li>Обратиться к разделу <a href="theory.html">Теория</a> для повторения материала</li>
+                <li>Попробовать решить аналогичные задачи в <a href="#">Практикуме</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Футер -->
+    <footer>
+        <div class="container">
+            <p>© 2023 Подготовка к ОГЭ по геометрии. Все права защищены.</p>
+            <p>Для связи: <a href="mailto:geometry-help@example.com" style="color: white;">geometry-help@example.com</a></p>
+        </div>
+    </footer>
+
+    <script>
+        // Функция проверки ответа
+        function checkAnswer(taskNumber, correctAnswer) {
+            const input = document.querySelector(`#task${taskNumber} .answer-input`);
+            const value = parseInt(input.value);
+            const taskCard = document.getElementById(`task${taskNumber}`);
+            
+            // Удаляем предыдущие сообщения
+            const oldMsg = taskCard.querySelector('.answer-message');
+            if (oldMsg) oldMsg.remove();
+            
+            const message = document.createElement('div');
+            message.classList.add('answer-message');
+            
+            if (value === correctAnswer) {
+                message.classList.add('correct-answer');
+                message.textContent = '✓ Верно! Правильный ответ: ' + correctAnswer;
+            } else if (isNaN(value)) {
+                message.classList.add('wrong-answer');
+                message.textContent = 'Введите число';
+            } else {
+                message.classList.add('wrong-answer');
+                message.textContent = '✗ Неверно. Попробуйте еще раз';
+            }
+            
+            input.insertAdjacentElement('afterend', message);
+        }
+        
+        // Функция показа подсказки
+        function showHint(taskNumber) {
+            const hintBox = document.getElementById(`hint${taskNumber}`);
+            const aiResponse = document.getElementById(`ai-response${taskNumber}`);
+            
+            // Показываем анимацию загрузки
+            hintBox.style.display = 'block';
+            aiResponse.innerHTML = '<span class="ai-typing"></span><span class="ai-typing"></span><span class="ai-typing"></span>';
+            
+            // Имитация запроса к ИИ (в реальности здесь будет API-вызов)
+            setTimeout(() => {
+                const hints = [
+                    "Обратите внимание на равные углы, отмеченные дугами.",
+                    "Сумма углов в треугольнике равна 180 градусам.",
+                    "Рассмотрите вертикальные и смежные углы.",
+                    "Используйте свойство биссектрисы угла."
+                ];
+                
+                const randomHint = hints[Math.floor(Math.random() * hints.length)];
+                aiResponse.innerHTML = randomHint;
+            }, 1500);
+        }
+    </script>
+</body>
+</html>

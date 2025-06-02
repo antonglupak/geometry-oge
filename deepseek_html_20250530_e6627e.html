@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Задачи по геометрии: Углы</title>
+    <link rel="stylesheet" href="styles/styles.css">
+    <style>
+        /* Стиль для кнопки вызова бота */
+        .ai-helper-btn {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 8px 15px;
+            margin: 10px 0;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        
+        /* Стиль для модального окна с ботом */
+        .bot-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+            z-index: 1000;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .bot-container {
+            width: 90%;
+            max-width: 600px;
+            height: 80vh;
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+        
+        .close-btn {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            color: white;
+            font-size: 24px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="navbar-container">
+            <a href="index.html" class="logo">Геометрия ОГЭ</a>
+            <ul class="nav-links">
+                <li><a href="index.html">Главная</a></li>
+                <li><a href="theory.html">Теория</a></li>
+                <li><a href="tasks.html" class="active">Задания</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container">
+        <h1>Задачи по теме: Углы</h1>
+        
+        <!-- Задача 1 -->
+        <div class="task-card" id="task1">
+            <div class="task-header">
+                <h2>Задача 1</h2>
+                <div class="task-number">1</div>
+            </div>
+            <img src="media/image1.png" alt="Задача 1" class="task-image">
+            <p>Углы, отмеченные на рисунке одной дугой, равны. Найдите угол α. Ответ дайте в градусах.</p>
+            
+            <div class="task-controls">
+                <input type="number" class="answer-input" placeholder="Ответ">
+                <button class="check-btn" onclick="checkAnswer(1, 40)">Проверить</button>
+                <button class="ai-helper-btn" onclick="openBotWithTask(1)">Помощь от ИИ</button>
+            </div>
+        </div>
+        
+        <!-- Остальные задачи (2-7) добавляются аналогично -->
+    </div>
+
+    <!-- Модальное окно с ботом iiAgent.pro -->
+    <div class="bot-modal" id="botModal">
+        <span class="close-btn" onclick="closeBotModal()">&times;</span>
+        <div class="bot-container">
+            <iframe 
+                id="iiAgentBot" 
+                allow="microphone;autoplay" 
+                style="width:100%;height:100%;border:none;" 
+                src="https://functions.iiagent.pro/api/v1.0/chatgpt_widget_dialog_api?record_id=recbbeK16uIKxW5KS&promt_id=27243&lang=ru&fullscreen=0&voice=1&file=1"
+            ></iframe>
+        </div>
+    </div>
+
+    <script>
+        // Проверка ответов
+        function checkAnswer(taskId, correctAnswer) {
+            const userAnswer = parseInt(document.querySelector(`#task${taskId} .answer-input`).value);
+            const resultElement = document.createElement('div');
+            
+            if (userAnswer === correctAnswer) {
+                resultElement.textContent = `✅ Верно! Ответ: ${correctAnswer}°`;
+                resultElement.style.color = 'green';
+            } else {
+                resultElement.textContent = '❌ Неверно. Попробуйте ещё раз или запросите подсказку.';
+                resultElement.style.color = 'red';
+            }
+            
+            document.querySelector(`#task${taskId} .task-controls`).appendChild(resultElement);
+        }
+
+        // Открывает модальное окно с ботом и передаёт задачу
+        function openBotWithTask(taskId) {
+            const botModal = document.getElementById('botModal');
+            const taskText = document.querySelector(`#task${taskId} p`).textContent;
+            
+            // Показываем модальное окно
+            botModal.style.display = 'flex';
+            
+            // После загрузки iframe отправляем сообщение с задачей
+            const iframe = document.getElementById('iiAgentBot');
+            iframe.onload = function() {
+                // Используем postMessage для передачи данных в iframe
+                iframe.contentWindow.postMessage({
+                    type: 'send_message',
+                    text: `Помоги решить задачу по геометрии: ${taskText}. Объясни по шагам.`
+                }, 'https://functions.iiagent.pro');
+            };
+        }
+
+        // Закрывает модальное окно
+        function closeBotModal() {
+            document.getElementById('botModal').style.display = 'none';
+        }
+
+        // Обработчик сообщений от iframe (если нужно получать ответы)
+        window.addEventListener('message', function(event) {
+            if (event.origin !== 'https://functions.iiagent.pro') return;
+            console.log('Сообщение от бота:', event.data);
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Геометрия: Параллелограммы</title>
+    <style>
+        :root {
+            --primary: #2c3e50;
+            --secondary: #3498db;
+            --accent: #e74c3c;
+            --light: #ecf0f1;
+            --dark: #2c3e50;
+            --font-main: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            font-family: var(--font-main);
+            line-height: 1.6;
+            color: var(--dark);
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f9f9f9;
+        }
+        
+        header {
+            text-align: center;
+            margin-bottom: 30px;
+            border-bottom: 2px solid var(--secondary);
+            padding-bottom: 10px;
+        }
+        
+        h1 {
+            color: var(--primary);
+            margin-bottom: 5px;
+        }
+        
+        h2 {
+            color: var(--secondary);
+            margin-top: 30px;
+            border-left: 4px solid var(--secondary);
+            padding-left: 10px;
+        }
+        
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 20px auto;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            border-radius: 4px;
+        }
+        
+        .figure-caption {
+            text-align: center;
+            font-style: italic;
+            color: #666;
+            margin-top: -15px;
+            margin-bottom: 25px;
+        }
+        
+        .theorem {
+            background-color: var(--light);
+            padding: 15px;
+            border-radius: 5px;
+            margin: 20px 0;
+            border-left: 4px solid var(--accent);
+        }
+        
+        .formula {
+            font-family: 'Courier New', monospace;
+            background-color: #f0f0f0;
+            padding: 8px 15px;
+            border-radius: 4px;
+            display: inline-block;
+            margin: 10px 0;
+            font-size: 1.1em;
+        }
+        
+        .important {
+            color: var(--accent);
+            font-weight: bold;
+        }
+        
+        .task {
+            background-color: #e8f4fc;
+            padding: 15px;
+            border-radius: 5px;
+            margin: 20px 0;
+        }
+        
+        .task-title {
+            font-weight: bold;
+            color: var(--primary);
+        }
+        
+        .quad-types {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin: 20px 0;
+        }
+        
+        .quad-card {
+            flex: 1;
+            min-width: 250px;
+            background: white;
+            padding: 15px;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        
+        .quad-card h3 {
+            color: var(--secondary);
+            border-bottom: 2px solid var(--secondary);
+            padding-bottom: 5px;
+        }
+        
+        .properties-list {
+            columns: 2;
+            column-gap: 20px;
+        }
+        
+        .solution-step {
+    margin: 15px 0;
+    padding: 10px;
+    background-color: #f8f9fa;
+    border-left: 3px solid var(--secondary);
+    transition: background-color 0.3s;
+}
+
+.solution-step:hover {
+    background-color: #e9ecef;
+}
+
+.solution-step p {
+    margin: 5px 0;
+}
+
+.task-title {
+    font-size: 1.2em;
+    color: var(--primary);
+    border-bottom: 2px solid var(--secondary);
+    padding-bottom: 5px;
+    margin-bottom: 15px;
+}
+
+        @media (max-width: 768px) {
+            body {
+                padding: 15px;
+            }
+            
+            h1 {
+                font-size: 1.8em;
+            }
+            
+            .quad-types {
+                flex-direction: column;
+            }
+            
+            .properties-list {
+                columns: 1;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Параллелограммы в геометрии</h1>
+        <p>Квадрат, прямоугольник, ромб и их свойства</p>
+    </header>
+
+    <section>
+        <h2>Виды параллелограммов</h2>
+        
+        <div class="quad-types">
+            <div class="quad-card">
+                <h3>Квадрат</h3>
+                <img src="imagepar1.png" alt="Квадрат">
+                <p class="figure-caption">Рисунок 1 - квадрат (красные отрезки - диагонали)</p>
+                <ul>
+                    <li>Все стороны равны</li>
+                    <li>Все углы по 90°</li>
+                    <li>Диагонали равны</li>
+                    <li>Диагонали перпендикулярны</li>
+                    <li>Диагонали - биссектрисы углов</li>
+                </ul>
+                <p><strong>Периметр:</strong> <span class="formula">P = 4a</span></p>
+                <p><strong>Площадь:</strong> <span class="formula">S = a²</span></p>
+            </div>
+            
+            <div class="quad-card">
+                <h3>Прямоугольник</h3>
+                <img src="imagepar2.png" alt="Прямоугольник">
+                <p class="figure-caption">Рисунок 2 - прямоугольник</p>
+                <ul>
+                    <li>Стороны попарно равны</li>
+                    <li>Все углы по 90°</li>
+                    <li>Диагонали равны</li>
+                    <li>Диагонали делятся пополам</li>
+                </ul>
+                <p><strong>Периметр:</strong> <span class="formula">P = 2(a + b)</span></p>
+                <p><strong>Площадь:</strong> <span class="formula">S = a × b</span></p>
+            </div>
+            
+            <div class="quad-card">
+                <h3>Ромб</h3>
+                <img src="imagepar3.png" alt="Ромб">
+                <p class="figure-caption">Рисунок 6 - ромб</p>
+                <ul>
+                    <li>Все стороны равны</li>
+                    <li>Противоположные углы равны</li>
+                    <li>Диагонали перпендикулярны</li>
+                    <li>Диагонали - биссектрисы углов</li>
+                </ul>
+                <p><strong>Площадь:</strong> <span class="formula">S = a × h</span> или <span class="formula">S = ½ × d₁ × d₂</span></p>
+            </div>
+            
+            <div class="quad-card">
+                <h3>Параллелограмм</h3>
+                <img src="imagepar4.png" alt="Параллелограмм">
+                <p class="figure-caption">Рисунок 3 - параллелограмм</p>
+                <ul>
+                    <li>Стороны попарно равны и параллельны</li>
+                    <li>Противоположные углы равны</li>
+                    <li>Диагонали делятся пополам</li>
+                    <li>Сумма соседних углов 180°</li>
+                </ul>
+                <p><strong>Площадь:</strong> <span class="formula">S = a × h</span> или <span class="formula">S = a × b × sin(α)</span></p>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <h2>Общие свойства параллелограммов</h2>
+        
+        <div class="theorem">
+            <p><strong>Все перечисленные фигуры - частные случаи параллелограмма и обладают его свойствами:</strong></p>
+            <div class="properties-list">
+                <ul>
+                    <li>Противоположные стороны равны и параллельны</li>
+                    <li>Противоположные углы равны</li>
+                    <li>Диагонали точкой пересечения делятся пополам</li>
+                    <li>Сумма углов, прилежащих к одной стороне, равна 180°</li>
+                    <li>Площадь можно найти через основание и высоту</li>
+                    <li>Центр симметрии - точка пересечения диагоналей</li>
+                </ul>
+            </div>
+        </div>
+        
+        <h3>Площадь через высоту</h3>
+        <img src="imagepar5.png" alt="Площадь параллелограмма через высоту">
+        <p class="figure-caption">Рисунок 4 - площадь через высоту</p>
+        <div class="formula">S = a × h</div>
+        
+        <h3>Площадь через синус угла</h3>
+        <img src="imagepar6.png" alt="Площадь через синус">
+        <p class="figure-caption">Рисунок 5 - площадь через синус</p>
+        <div class="formula">S = a × b × sin(α)</div>
+    </section>
+
+    <section>
+        <h2>Примеры задач с подробным решением</h2>
+        
+        <div class="task">
+            <p class="task-title">Пример 1. Периметр квадрата равен 40. Найдите его площадь.</p>
+            <p><strong>Дано:</strong> P = 40</p>
+            <p><strong>Найти:</strong> S</p>
+            <div class="solution-step">
+                <p>1. Запишем формулу периметра квадрата:</p>
+                <div class="formula">P = 4a</div>
+            </div>
+            <div class="solution-step">
+                <p>2. Подставим известное значение периметра:</p>
+                <div class="formula">40 = 4a</div>
+            </div>
+            <div class="solution-step">
+                <p>3. Найдем длину стороны (a):</p>
+                <div class="formula">a = 40 ÷ 4 = 10</div>
+            </div>
+            <div class="solution-step">
+                <p>4. Теперь вычислим площадь по формуле:</p>
+                <div class="formula">S = a² = 10² = 100</div>
+            </div>
+            <p><strong>Ответ:</strong> Площадь квадрата равна <span class="formula">100</span>.</p>
+        </div>
+        
+        <div class="task">
+            <p class="task-title">Пример 2. В прямоугольнике ABCD стороны 6 и 8. Найти AO (точка О - пересечение диагоналей).</p>
+            <img src="imagepar7.png" alt="Решение примера 2">
+            <p class="figure-caption">Рисунок 7 - решение примера 2</p>
+            <p><strong>Дано:</strong> AB = 6, BC = 8</p>
+            <p><strong>Найти:</strong> AO</p>
+            <div class="solution-step">
+                <p>1. Найдем диагональ прямоугольника по теореме Пифагора:</p>
+                <div class="formula">d = √(AB² + BC²) = √(6² + 8²)</div>
+            </div>
+            <div class="solution-step">
+                <p>2. Вычислим квадраты сторон:</p>
+                <div class="formula">= √(36 + 64) = √100 = 10</div>
+            </div>
+            <div class="solution-step">
+                <p>3. В прямоугольнике диагонали равны и точкой пересечения делятся пополам:</p>
+                <div class="formula">AO = d/2 = 10/2 = 5</div>
+            </div>
+            <p><strong>Ответ:</strong> Длина отрезка AO равна <span class="formula">5</span>.</p>
+        </div>
+        
+        <div class="task">
+            <p class="task-title">Пример 3. В прямоугольнике ABCD AB=6, BC=14. Точка E на BC, угол AEB=45°. Найти ED.</p>
+            <img src="imagepar8.png" alt="Решение примера 3">
+            <p class="figure-caption">Рисунок 8 - решение примера 3</p>
+            <p><strong>Дано:</strong> AB = 6, BC = 14, ∠AEB = 45°</p>
+            <p><strong>Найти:</strong> ED</p>
+            <div class="solution-step">
+                <p>1. Рассмотрим треугольник ABE:</p>
+                <ul>
+                    <li>∠B = 90° (по свойству прямоугольника)</li>
+                    <li>∠E = 45° (по условию)</li>
+                    <li>Сумма углов треугольника 180° → ∠A = 180° - 90° - 45° = 45°</li>
+                </ul>
+            </div>
+            <div class="solution-step">
+                <p>2. Треугольник ABE - равнобедренный (два угла по 45°), значит:</p>
+                <div class="formula">AB = BE = 6</div>
+            </div>
+            <div class="solution-step">
+                <p>3. Найдем отрезок EC:</p>
+                <div class="formula">EC = BC - BE = 14 - 6 = 8</div>
+            </div>
+            <div class="solution-step">
+                <p>4. Теперь рассмотрим треугольник ECD:</p>
+                <ul>
+                    <li>CD = AB = 6 (противоположные стороны прямоугольника)</li>
+                    <li>EC = 8 (из предыдущего шага)</li>
+                    <li>∠C = 90° (по свойству прямоугольника)</li>
+                </ul>
+            </div>
+            <div class="solution-step">
+                <p>5. По теореме Пифагора найдем ED:</p>
+                <div class="formula">ED = √(EC² + CD²) = √(8² + 6²) = √(64 + 36) = √100 = 10</div>
+            </div>
+            <p><strong>Ответ:</strong> Длина отрезка ED равна <span class="formula">10</span>.</p>
+        </div>
+        
+        <div class="task">
+            <p class="task-title">Пример 4. В параллелограмме ABCD биссектрисы углов A и B пересекаются в точке O. AO=12, BO=5. Найти AB.</p>
+            <img src="imagepar9.png" alt="Решение примера 4">
+            <p class="figure-caption">Рисунок 9 - решение примера 4</p>
+            <p><strong>Дано:</strong> AO = 12, BO = 5</p>
+            <p><strong>Найти:</strong> AB</p>
+            <div class="solution-step">
+                <p>1. В параллелограмме сумма соседних углов равна 180°:</p>
+                <div class="formula">∠A + ∠B = 180°</div>
+            </div>
+            <div class="solution-step">
+                <p>2. Биссектрисы делят углы пополам:</p>
+                <div class="formula">∠OAB = ∠A/2, ∠OBA = ∠B/2</div>
+            </div>
+            <div class="solution-step">
+                <p>3. Сумма половин углов в треугольнике AOB:</p>
+                <div class="formula">∠OAB + ∠OBA = (∠A + ∠B)/2 = 180°/2 = 90°</div>
+            </div>
+            <div class="solution-step">
+                <p>4. Найдем третий угол треугольника AOB:</p>
+                <div class="formula">∠AOB = 180° - 90° = 90°</div>
+                <p>Таким образом, треугольник AOB - прямоугольный.</p>
+            </div>
+            <div class="solution-step">
+                <p>5. По теореме Пифагора найдем AB:</p>
+                <div class="formula">AB = √(AO² + BO²) = √(12² + 5²) = √(144 + 25) = √169 = 13</div>
+            </div>
+            <p><strong>Ответ:</strong> Сторона AB равна <span class="formula">13</span>.</p>
+        </div>
+        
+        <div class="task">
+            <p class="task-title">Пример 5. В ромбе диагональ BD=10, сторона=20√3. Найти площадь.</p>
+            <img src="imagepar10.png" alt="Решение примера 5">
+            <p class="figure-caption">Рисунок 10 - решение примера 5</p>
+            <p><strong>Дано:</strong> BD = 10, BC = 20√3</p>
+            <p><strong>Найти:</strong> S</p>
+            <div class="solution-step">
+                <p>1. Диагонали ромба делятся точкой пересечения пополам:</p>
+                <div class="formula">BO = BD/2 = 10/2 = 5</div>
+            </div>
+            <div class="solution-step">
+                <p>2. Диагонали ромба перпендикулярны, поэтому треугольник BOC - прямоугольный.</p>
+            </div>
+            <div class="solution-step">
+                <p>3. По теореме Пифагора найдем половину второй диагонали (OC):</p>
+                <div class="formula">OC = √(BC² - BO²) = √((20√3)² - 5²) = √(1200 - 25) = √1175 = 5√47</div>
+            </div>
+            <div class="solution-step">
+                <p>4. Вторая диагональ AC равна:</p>
+                <div class="formula">AC = 2 × OC = 2 × 5√47 = 10√47</div>
+            </div>
+            <div class="solution-step">
+                <p>5. Площадь ромба найдем как полупроизведение диагоналей:</p>
+                <div class="formula">S = ½ × AC × BD = ½ × 10√47 × 10 = 50√47</div>
+            </div>
+            <p><strong>Ответ:</strong> Площадь ромба равна <span class="formula">50√47</span>.</p>
+        </div>
+    </section>
+</body>
+</html>

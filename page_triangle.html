@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Геометрия: Треугольники</title>
+    <style>
+        :root {
+            --primary: #2c3e50;
+            --secondary: #3498db;
+            --accent: #e74c3c;
+            --light: #ecf0f1;
+            --dark: #2c3e50;
+            --font-main: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            font-family: var(--font-main);
+            line-height: 1.6;
+            color: var(--dark);
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f9f9f9;
+        }
+        
+        header {
+            text-align: center;
+            margin-bottom: 30px;
+            border-bottom: 2px solid var(--secondary);
+            padding-bottom: 10px;
+        }
+        
+        h1 {
+            color: var(--primary);
+            margin-bottom: 5px;
+        }
+        
+        h2 {
+            color: var(--secondary);
+            margin-top: 30px;
+            border-left: 4px solid var(--secondary);
+            padding-left: 10px;
+        }
+        
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 20px auto;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            border-radius: 4px;
+        }
+        
+        .figure-caption {
+            text-align: center;
+            font-style: italic;
+            color: #666;
+            margin-top: -15px;
+            margin-bottom: 25px;
+        }
+        
+        .theorem {
+            background-color: var(--light);
+            padding: 15px;
+            border-radius: 5px;
+            margin: 20px 0;
+            border-left: 4px solid var(--accent);
+        }
+        
+        .formula {
+            font-family: 'Courier New', monospace;
+            background-color: #f0f0f0;
+            padding: 8px 15px;
+            border-radius: 4px;
+            display: inline-block;
+            margin: 10px 0;
+            font-size: 1.1em;
+        }
+        
+        .important {
+            color: var(--accent);
+            font-weight: bold;
+        }
+        
+        .task {
+            background-color: #e8f4fc;
+            padding: 15px;
+            border-radius: 5px;
+            margin: 20px 0;
+        }
+        
+        .task-title {
+            font-weight: bold;
+            color: var(--primary);
+        }
+        
+        .classification {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin: 20px 0;
+        }
+        
+        .classification-item {
+            flex: 1;
+            min-width: 250px;
+            background: white;
+            padding: 15px;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        
+        .trig-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        
+        .trig-table th, .trig-table td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+        
+        .trig-table th {
+            background-color: var(--secondary);
+            color: white;
+        }
+        
+        .trig-table tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+        
+        @media (max-width: 768px) {
+            body {
+                padding: 15px;
+            }
+            
+            h1 {
+                font-size: 1.8em;
+            }
+            
+            .classification {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Треугольники в геометрии</h1>
+        <p>Основные свойства, классификация и важные теоремы</p>
+    </header>
+
+    <section>
+        <p>Треугольник - одна из самых популярных фигур в геометрических задачах. Постараемся понять, чем он так хорош.</p>
+        
+        <h2>Разновидности треугольников</h2>
+        
+        <div class="classification">
+            <div class="classification-item">
+                <h3>По типу углов</h3>
+                <img src="imagetri1.png" alt="Классификация по углам">
+                <p class="figure-caption">Рисунок 1 - классификация по типу углов треугольника</p>
+                <ul>
+                    <li>Остроугольные (все углы &lt;90°) (черный)</li>
+                    <li>Прямоугольные (один угол =90°) (красный)</li>
+                    <li>Тупоугольные (один угол &gt;90°) (синий)</li>
+                </ul>
+            </div>
+            
+            <div class="classification-item">
+                <h3>По сторонам</h3>
+                <img src="imagetri2.png" alt="Классификация по сторонам">
+                <p class="figure-caption">Рисунок 2 - классификация по сторонам</p>
+                <ul>
+                    <li>Разносторонний (все стороны разные) (черный)</li>
+                    <li>Равнобедренный (две стороны равны) (красный)</li>
+                    <li>Равносторонний (все стороны равны) (синий)</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <h2>Основные элементы треугольника</h2>
+        
+        <div class="theorem">
+            <h3>Высота треугольника</h3>
+            <img src="imagetri3.png" alt="Высоты треугольника">
+            <p class="figure-caption">Рисунок 3 - высоты треугольника</p>
+            <p>Перпендикуляр, проведенный из вершины к противоположной стороне. Все три высоты пересекаются в одной точке.</p>
+            <p>Формула площади: <span class="formula">S = ½ × a × h</span>, где <em>a</em> - основание, <em>h</em> - высота.</p>
+        </div>
+        
+        <div class="theorem">
+            <h3>Медиана треугольника</h3>
+            <img src="imagetri4.png" alt="Медианы треугольника">
+            <p class="figure-caption">Рисунок 4 - медианы треугольника</p>
+            <p>Отрезок, соединяющий вершину с серединой противоположной стороны. Точка пересечения делит медианы в отношении 2:1.</p>
+            <p class="formula">AO = 2 × A₁O</p>
+        </div>
+        
+        <div class="theorem">
+            <h3>Биссектриса треугольника</h3>
+            <img src="imagetri5.png" alt="Биссектрисы треугольника">
+            <p class="figure-caption">Рисунок 5 - биссектрисы треугольника</p>
+            <p>Делит угол пополам и противоположную сторону на отрезки, пропорциональные прилежащим сторонам:</p>
+            <p class="formula">A₁C / A₁B = AC / AB</p>
+        </div>
+    </section>
+
+    <section>
+        <h2>Периметр и площадь</h2>
+        
+        <p>Периметр - сумма длин всех сторон. Формула Герона для площади:</p>
+        <div class="formula">S = √[p(p - a)(p - b)(p - c)]</div>
+        <p>где <em>p</em> - полупериметр: <span class="formula">p = (a + b + c)/2</span></p>
+        
+        <img src="imagetri6.png" alt="Пример треугольника">
+        <p class="figure-caption">Пример: треугольник со сторонами 5, 5, 6</p>
+    </section>
+
+    <section>
+        <h2>Равнобедренный треугольник</h2>
+        
+        <img src="imagetri7.png" alt="Равнобедренный треугольник">
+        <p class="figure-caption">Рисунок 6 - свойства равнобедренного треугольника</p>
+        
+        <div class="theorem">
+            <p><strong>Свойства:</strong></p>
+            <ul>
+                <li>Высота к основанию является также медианой и биссектрисой</li>
+                <li>Углы при основании равны</li>
+                <li>Если в треугольнике высота является медианой или равны два угла - он равнобедренный</li>
+            </ul>
+        </div>
+    </section>
+
+    <section>
+        <h2>Равносторонний треугольник</h2>
+        
+        <img src="imagetri8.png" alt="Равносторонний треугольник">
+        <p class="figure-caption">Рисунок 7 - равносторонний треугольник</p>
+        
+        <div class="theorem">
+            <p><strong>Свойства:</strong></p>
+            <ul>
+                <li>Все стороны равны</li>
+                <li>Все углы равны 60°</li>
+                <li>Любая высота является также медианой и биссектрисой</li>
+            </ul>
+        </div>
+    </section>
+
+    <section>
+        <h2>Прямоугольный треугольник</h2>
+        
+        <img src="imagetri9.png" alt="Прямоугольный треугольник">
+        <p class="figure-caption">Рисунок 8 - углы прямоугольного треугольника</p>
+        
+        <div class="theorem">
+            <p><strong>Особенности:</strong></p>
+            <ul>
+                <li>Один угол равен 90°</li>
+                <li>Сумма двух других углов: α + β = 90°</li>
+                <li>Стороны: гипотенуза (напротив прямого угла) и катеты</li>
+            </ul>
+        </div>
+        
+        <h3>Свойства высоты</h3>
+        <img src="imagetri10.png" alt="Высота прямоугольного треугольника">
+        <p class="figure-caption">Рисунок 9 - высота из прямого угла</p>
+        <p>Высота делит прямой угол на углы α и β (равные острым углам треугольника).</p>
+        
+        <h3>Свойства медианы</h3>
+        <img src="imagetri11.png" alt="Медиана прямоугольного треугольника">
+        <p class="figure-caption">Рисунок 10 - медиана к гипотенузе</p>
+        <p>Медиана к гипотенузе равна её половине и делит треугольник на два равнобедренных.</p>
+        
+        <h3>Описанная окружность</h3>
+        <img src="imagetri12.png" alt="Прямоугольный треугольник в окружности">
+        <p class="figure-caption">Рисунок 11 - прямоугольный треугольник в окружности</p>
+        <p>Центр окружности лежит на середине гипотенузы, которая является диаметром.</p>
+        
+        <h3>Свойство угла 30°</h3>
+        <img src="imagetri13.png" alt="Свойство 30° угла">
+        <p class="figure-caption">Рисунок 12 - свойство 30° угла</p>
+        <p>Катет, лежащий напротив угла 30°, равен половине гипотенузы (и обратно).</p>
+        
+        <h3>Теорема Пифагора</h3>
+        <img src="imagetri14.png" alt="Теорема Пифагора">
+        <p class="figure-caption">Рисунок 13 - теорема Пифагора</p>
+        <div class="formula">a² + b² = c²</div>
+    </section>
+
+    <section>
+        <h2>Тригонометрические функции</h2>
+        
+        <table class="trig-table">
+            <tr>
+                <th>Функция</th>
+                <th>Определение</th>
+                <th>Формула</th>
+            </tr>
+            <tr>
+                <td>sin(α)</td>
+                <td>противолежащий катет / гипотенуза</td>
+                <td class="formula">a / c</td>
+            </tr>
+            <tr>
+                <td>cos(α)</td>
+                <td>прилежащий катет / гипотенуза</td>
+                <td class="formula">b / c</td>
+            </tr>
+            <tr>
+                <td>tg(α)</td>
+                <td>противолежащий катет / прилежащий катет</td>
+                <td class="formula">a / b</td>
+            </tr>
+            <tr>
+                <td>ctg(α)</td>
+                <td>прилежащий катет / противолежащий катет</td>
+                <td class="formula">b / a</td>
+            </tr>
+        </table>
+        
+        <div class="theorem">
+            <p><strong>Основное тригонометрическое тождество:</strong></p>
+            <div class="formula">sin²(α) + cos²(α) = 1</div>
+        </div>
+    </section>
+</body>
+</html>
